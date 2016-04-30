@@ -1,0 +1,60 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * CustomerRequestDetailsVehicle
+ *
+ * @ORM\Table(name="customer_request_details_vehicle", indexes={@ORM\Index(name="fk_customer_has_vehicle_vehicle2_idx", columns={"vehicle_id"}), @ORM\Index(name="fk_customer_has_vehicle_customer1_idx", columns={"customer_id"})})
+ * @ORM\Entity
+ */
+class CustomerRequestDetailsVehicle
+{
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="start_date", type="date", nullable=true)
+     */
+    private $startDate;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="end_date", type="date", nullable=true)
+     */
+    private $endDate;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var \AppBundle\Entity\Vehicle
+     *
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Vehicle")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="vehicle_id", referencedColumnName="id")
+     * })
+     */
+    private $vehicle;
+
+    /**
+     * @var \AppBundle\Entity\Customer
+     *
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Customer")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="customer_id", referencedColumnName="id")
+     * })
+     */
+    private $customer;
+
+
+}
+
