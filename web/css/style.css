@@ -1,0 +1,140 @@
+.panel
+{
+	margin: 20px;
+}
+
+.error_message
+{
+	color: red;
+	padding: 10px;
+}
+
+table, th, td {
+    border-collapse: collapse;
+}
+th, td {
+    padding: 2px;
+    padding-left:10px;
+    text-align: left;
+    vertical-align: top;
+    border-style: solid;
+    border-width: 1px;
+    border-color:rgb(220,220,220);
+}
+
+
+/*Shanika*/
+.jumbotron {
+  /*background-image:url("{{ asset('img/uom1.jpg') }}");*/
+  height: 500px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.jumbotron .container {
+  position: relative;
+  top:100px;
+}
+
+.jumbotron h1 {
+  color: #fff;
+  font-size: 48px;  
+  font-family: 'Shift', sans-serif;
+  font-weight: bold;
+}
+
+.jumbotron p {
+  font-size: 20px;
+  color: #fff;
+}
+
+.learn-more {
+  background-color: #f7f7f7;
+}
+
+.learn-more h3 {
+  font-family: 'Shift', sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.learn-more a {
+  color: #00b0ff;
+}
+
+.neighborhood-guides{
+    background-color:#efefef;
+    border-bottom:1px solid #dbdbdb;
+}
+
+.neighborhood-guides h2{
+    color:#393c3d;
+    font-size:24px;
+}
+
+.neighborhood-guides p{
+    margin-bottom:13px;
+    font-size:15px;
+}
+/*end*/
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/*.item {
+    width: 120px;
+    height: 500px;
+    height: auto;
+    float: left;
+    margin: 3px;
+    padding: 3px;
+}*/
+
+.top-row{
+    height: auto;
+    float: left;
+    margin: 3px;
+    padding: 3px;
+
+}
+
+
+
+/*For forms*/
+ input,  textarea {
+    width: 100%;
+}
+button, input, select, textarea {
+
+    /*margin-bottom: 20px;*/
+}
+
+label
+{
+    color: #003200;
+    padding-right: 20px;
+    display: block!important;
+    margin-top: 20px;
+}
+form
+{
+    width:50%;
+}
+
+
+/*Chosen*/
+
+.chosen-container-single .chosen-single
+{
+    border-radius: 0px;
+    /*margin-bottom: 20px;*/
+}
+
+
+#cssmenu ul li a {
+    text-transform: none;
+    padding: 15px 20px 15px 1px;
+
+}

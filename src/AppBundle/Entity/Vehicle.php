@@ -71,7 +71,32 @@ class Vehicle
     private $id;
 
 
+/*---------------manually added mathods--------------------------------*/
+    public function save()
+    {
 
+      if($this->id ==null)
+        {
+           
+        $con = Connection::getConnectionObject()->getConnection();
+        $stmt = $con->prepare('INSERT INTO `vehicle` (`name`,`type`, `plate`, `fuel`, `transmission`, `description`, `status`) VALUES (?,?, ?,?,?,?,?)');  
+        $stmt->bind_param("sssssss",$this->name,$this->type,$this->plate,$this->fuel,$this->transmission,$this->description,$this->status);  
+        $stmt->execute();  
+        $stmt->close();
+        }
+        else
+        {
+        $con = Connection::getConnectionObject()->getConnection();
+        $stmt = $con->prepare('UPDATE vehicle SET name =?,type=?,plate=?,fuel=?,transmission=?,description=?,status=? WHERE id =?');  
+        $stmt->bind_param("sssssss",$this->name,$this->type,$this->plate,$this->fuel,$this->transmission,$this->description,$this->status,$this->id);  
+        $stmt->execute();  
+        $stmt->close();   
+        }
+    
+
+
+
+/*-----------------------------------------------------------------------*/
     /**
      * Set name
      *
