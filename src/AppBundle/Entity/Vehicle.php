@@ -93,6 +93,7 @@ class Vehicle
         $stmt->execute();  
         $stmt->close();   
         }
+    }
     
     public static function getOne($id)
     {

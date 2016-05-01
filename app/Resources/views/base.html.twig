@@ -2,76 +2,12 @@
 <html>
     <head>
         <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-
         <title>{% block title %}Welcome!{% endblock %}</title>
-
         {% block stylesheets %}{% endblock %}
-        <link rel="icon" type="image/x-icon" href="{{ asset('img/mora2.png') }}" />
-        <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}" />
-        <link rel="stylesheet" href="{{ asset('css/navbar.css') }}" />
-
-
-        {#Chosen#}
-        <link rel="stylesheet" href="{{ asset('css/chosen.min.css') }}" />
-        <script src="{{ asset('js/jquery-1.10.2.js')}}"></script>
-        <script src="{{ asset('js/chosen.jquery.min.js') }}"></script>
-
-        {#Custom Style#}
-        <link rel="stylesheet" href="{{ asset('css/style.css') }}" />
-
-
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
-
-<!-- Navbar -->
-<div id='cssmenu'>
-<ul>
-
-    {% if is_granted('ROLE_ADMIN') %}
-    <li ><a href='{{url('homepage')}}'><span>Home</span></a></li>
-    <li><a href='{{url('player_home')}}'><span>Players</span></a></li>
-    <li><a href='{{url('sport_home')}}'><span>Sports</span></a></li>
-    <li><a href='{{url('resource_home')}}'><span>Resources</span></a></li>
-    <li><a href='{{url('equipment_home')}}'><span>Equipment</span></a></li>
-    <li><a href='{{url('equipmentBorrowedByPlayer_home')}}'><span>Borrow Equipment</span></a></li>
-    <li><a href='{{url('reservation_home')}}'><span>Reserve Equipment</span></a></li>
-    <li><a href='{{url('sportHasResource_home')}}'><span>Allocate Resource</span></a></li>
-    <li><a href='{{url('playerInvolvedInSport_home')}}'><span>Involve Player</span></a></li>
-    <li><a href='{{url('sportHasEquipment_home')}}'><span>Allocate Equipment</span></a></li>
-   <!-- <li class='last'><a href='#'><span>Contact</span></a></li> -->
-
-
-    <li><a href='{{url('logout')}}'><span>Logout ( {{ app.user.username }} )</span></a></li>
-    {% endif %}
-
-    {% if not is_granted('ROLE_ADMIN') %}
-        <li><a href='{{url('homepage_guest')}}'><span>Home</span></a></li>
-        <li><a href='{{url('login_route')}}'><span>Login</span></a></li>
-        <li><a href='{{url('signup')}}'><span>Sign Up</span></a></li>
-    {% endif %}
-
-
-</ul>
-</div>
-
-
-      <!-- Content -->
-      <div class="panel panel-default">
-        <div class="panel-heading">{{ block('title') }}<div class="pull-right">{% block links %}{% endblock %}</div></div>
-        <div class="panel-body">
-
-          <div class='error_message'> {{ form_error | default("") }} </div>
-          {% block body %}{% endblock %}
-          {% block javascripts %}{% endblock %}
-        
-        </div>
-      </div>
-
-
-      <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-      <!-- Include all compiled plugins (below), or include individual files as needed -->
-      <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+        {% block body %}{% endblock %}
+        {% block javascripts %}{% endblock %}
     </body>
 </html>
