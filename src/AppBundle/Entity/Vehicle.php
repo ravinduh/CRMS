@@ -2,6 +2,7 @@
 
 namespace AppBundle\Entity;
 
+use AppBundle\Controller\Connection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -113,9 +114,44 @@ class Vehicle
         $stmt->bind_result($vehicle->id,$vehicle->name,$vehicle->type,$vehicle->plate,$vehicle->fuel,$vehicle->transmission,$vehicle->description,$vehicle->status);
         $stmt->fetch();
         $stmt->close();
-        return $player;
+        return $vehicle;
     }
 
+    public static function getAll()
+    {
+        $con = Connection::getConnectionObject()->getConnection();
+        // Check connection
+        if (mysqli_connect_errno())
+        {
+            echo "Failed to connect to MySQL: " . mysqli_connect_error();
+        }
+
+        $vehicles = array(); //Make an empty array
+        $stmt = $con->prepare('SELECT  vehicle.id, vehicle.name, vehicle.type, vehicle.plate, vehicle.fuel, vehicle.transmission, vehicle.description, vehicle.status FROM vehicle');
+        $stmt->execute();
+        $stmt->bind_result($id,$name,$type,$plate,$fuel,$transmission,$description,$status);
+        while($stmt->fetch())
+        {
+            $vehicle = new Vehicle();
+            $vehicle->setId($id);
+            $vehicle->setName($name);
+            $vehicle->setType($type);
+            $vehicle->setPlate($plate);
+            $vehicle->setFuel($fuel);
+            $vehicle->setTransmission($transmission);
+            $vehicle->setDescription($description);
+            $vehicle->setStatus($status);
+           
+
+          
+
+            array_push($vehicles,$vehicle); //Push one by one
+        }
+        $stmt->close();
+        
+        return $vehicles;
+
+    }
 
 /*-----------------------------------------------------------------------*/
     /**
@@ -294,5 +330,12 @@ class Vehicle
     public function getId()
     {
         return $this->id;
+    }
+
+    public function setId($id)
+    {
+        $this->id=$id;
+
+        return $this;
     }
 }

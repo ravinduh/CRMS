@@ -124,6 +124,11 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                 return array (  '_controller' => 'AppBundle\\Controller\\VehicleController::createAction',  '_route' => 'vehicle_create',);
             }
 
+            // vehicle_viewAll
+            if ($pathinfo === '/vehicle/view') {
+                return array (  '_controller' => 'AppBundle\\Controller\\VehicleController::viewallAction',  '_route' => 'vehicle_viewAll',);
+            }
+
         }
 
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();

@@ -57,4 +57,15 @@ class VehicleController extends Controller
         // replace this example code with whatever you need
         return $this->render('vehicle/create.html.twig', array('form' => $form->createView()));
     }
+
+        /**
+     * @Route("/vehicle/view", name="vehicle_viewAll")
+     */
+    public function viewallAction( Request $request)
+    {
+        
+        $vehicles =  Vehicle::getAll();
+        return $this->render('vehicle/viewall.html.twig', array('vehicles' => $vehicles));
+
+    }
 }
