@@ -12,6 +12,7 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Vehicle
 {
+   
     /**
      * @var string
      *
@@ -93,7 +94,26 @@ class Vehicle
         $stmt->close();   
         }
     
+    public static function getOne($id)
+    {
+        $con = Connection::getConnectionObject()->getConnection();
+        // Check connection
+        if (mysqli_connect_errno()) 
+        {
+            echo "Failed to connect to MySQL: " . mysqli_connect_error();
+        }
 
+        $vehicle = new Vehicle();
+        $stmt = $con->prepare('SELECT vehicle.id, vehicle.name, vehicle.type, vehicle.plate, vehicle.fuel, vehicle.transmission, vehicle.description, vehicle.status
+         FROM vehicle where vehicle.id=?');
+        $stmt->bind_param("s",$id);
+        $stmt->execute();
+
+        $stmt->bind_result($vehicle->id,$vehicle->name,$vehicle->type,$vehicle->plate,$vehicle->fuel,$vehicle->transmission,$vehicle->description,$vehicle->status);
+        $stmt->fetch();
+        $stmt->close();
+        return $player;
+    }
 
 
 /*-----------------------------------------------------------------------*/
