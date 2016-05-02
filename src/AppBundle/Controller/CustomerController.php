@@ -60,7 +60,18 @@ class CustomerController extends Controller
     {
         
         $customers =  Customer::getAll();
-        return $this->render('customer/viewall.html.twig', array('customers' => $vehicles));
+        return $this->render('customer/viewall.html.twig', array('customers' => $customers));
+
+    }
+
+     /**
+     * @Route("/customer/view/{id}", name="customer_view")
+     */
+    public function viewAction($id, Request $request)
+    {
+        $customer =  Customer::getOne($id);
+      
+        return $this->render('customer/view.html.twig', array('customer' =>$customer));  
 
     }
 }
