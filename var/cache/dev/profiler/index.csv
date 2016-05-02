@@ -41,3 +41,6 @@ e7d0d1,::1,GET,http://localhost/crms/web/app_dev.php/vehicle/view?id=1,146213327
 0dd1b5,::1,GET,http://localhost/crms/web/app_dev.php/vehicle/view?id=1,1462133526,,500
 5f7ebd,::1,GET,http://localhost/crms/web/app_dev.php/vehicle/view?id=1,1462133563,,200
 42481c,::1,GET,http://localhost/crms/web/app_dev.php/vehicle/view?id=2,1462133569,,200
+ccd8bc,::1,GET,http://localhost/crms/web/app_dev.php/vehicle/create,1462165974,,200
+59e776,::1,GET,http://localhost/crms/web/app_dev.php/vehicle/,1462165986,,302
+b2f03e,::1,GET,http://localhost/crms/web/app_dev.php/vehicle/view,1462165990,,200

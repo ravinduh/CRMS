@@ -100,6 +100,37 @@ class Customer
         $stmt->close();
         return $customer;
     }
+
+        public static function getAll()
+    {
+        $con = Connection::getConnectionObject()->getConnection();
+        // Check connection
+        if (mysqli_connect_errno())
+        {
+            echo "Failed to connect to MySQL: " . mysqli_connect_error();
+        }
+
+        $customers = array(); //Make an empty array
+        $stmt = $con->prepare('SELECT  customer.id, customer.name, customer.nic, customer.contact_number, customer.address, customer.email FROM customer');
+        $stmt->execute();
+        $stmt->bind_result($id,$name,$nic,$contactNumber,$address,$email);
+        while($stmt->fetch())
+        {
+            $customer = new Customer();
+            $customer->setId($id);
+            $customer->setName($name);
+            $customer->setNic($nic);
+            $customer->setContactNumber($contactNumber);
+            $customer->setAddress($address);
+            $customer->setEmail($email);
+           
+
+            array_push($customers,$customers); //Push one by one
+        }
+        $stmt->close();
+        
+        return $customers;
+    }
 /*----------------------------------------------------------------------*/
     /**
      * Set name
@@ -229,5 +260,12 @@ class Customer
     public function getId()
     {
         return $this->id;
+    }
+
+    public function setId($id)
+    {
+        $this->id=$id
+
+        return $this;
     }
 }
