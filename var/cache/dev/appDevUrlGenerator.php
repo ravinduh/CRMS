@@ -41,6 +41,7 @@ class appDevUrlGenerator extends Symfony\Component\Routing\Generator\UrlGenerato
         'vehicle_home' => array (  0 =>   array (  ),  1 =>   array (    '_controller' => 'AppBundle\\Controller\\VehicleController::indexAction',  ),  2 =>   array (  ),  3 =>   array (    0 =>     array (      0 => 'text',      1 => '/vehicle/',    ),  ),  4 =>   array (  ),  5 =>   array (  ),),
         'vehicle_create' => array (  0 =>   array (  ),  1 =>   array (    '_controller' => 'AppBundle\\Controller\\VehicleController::createAction',  ),  2 =>   array (  ),  3 =>   array (    0 =>     array (      0 => 'text',      1 => '/vehicle/create',    ),  ),  4 =>   array (  ),  5 =>   array (  ),),
         'vehicle_viewAll' => array (  0 =>   array (  ),  1 =>   array (    '_controller' => 'AppBundle\\Controller\\VehicleController::viewallAction',  ),  2 =>   array (  ),  3 =>   array (    0 =>     array (      0 => 'text',      1 => '/vehicle/view',    ),  ),  4 =>   array (  ),  5 =>   array (  ),),
+        'vehicle_view' => array (  0 =>   array (    0 => 'id',  ),  1 =>   array (    '_controller' => 'AppBundle\\Controller\\VehicleController::viewAction',  ),  2 =>   array (  ),  3 =>   array (    0 =>     array (      0 => 'variable',      1 => '/',      2 => '[^/]++',      3 => 'id',    ),    1 =>     array (      0 => 'text',      1 => '/vehicle/view',    ),  ),  4 =>   array (  ),  5 =>   array (  ),),
     );
         }
     }

@@ -27,7 +27,7 @@ All Vehicles
     {% for vehi in vehicles %}
         <tr>
         <td>
-        <a href="{{url('vehicle_viewAll',{'id':vehi.id})}}">{{ vehi.name|e }}</a>
+        <a href="{{url('vehicle_view',{'id':vehi.id})}}">{{ vehi.name|e }}</a>
         </td>
 
         <td>{{ vehi.type|e}}

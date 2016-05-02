@@ -68,4 +68,15 @@ class VehicleController extends Controller
         return $this->render('vehicle/viewall.html.twig', array('vehicles' => $vehicles));
 
     }
+
+    /**
+     * @Route("/vehicle/view/{id}", name="vehicle_view")
+     */
+    public function viewAction($id, Request $request)
+    {
+        $vehicle =  Vehicle::getOne($id);
+      
+        return $this->render('vehicle/view.html.twig', array('vehicle' =>$vehicle));  
+
+    }
 }

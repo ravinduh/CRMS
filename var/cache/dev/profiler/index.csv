@@ -59,3 +59,14 @@ c5d633,::1,GET,http://localhost/crms/web/app_dev.php/customer/create,1462168323,
 5bfa3a,::1,GET,http://localhost/crms/web/app_dev.php/customer/create,1462168496,,200
 0759a9,::1,GET,http://localhost/crms/web/app_dev.php/customer/create,1462168547,7617a8,200
 7617a8,::1,POST,http://localhost/crms/web/app_dev.php/customer/create,1462168547,,500
+ee5fdd,::1,GET,http://localhost/crms/web/app_dev.php/customer/create,1462169817,90433a,200
+90433a,::1,POST,http://localhost/crms/web/app_dev.php/customer/create,1462169817,,500
+103bd2,::1,GET,http://localhost/crms/web/app_dev.php/customer,1462169832,,301
+6e2854,::1,GET,http://localhost/crms/web/app_dev.php/customer/,1462169832,2f48c2,200
+2f48c2,::1,GET,http://localhost/crms/web/app_dev.php/customer/,1462169832,,500
+a0ad0d,::1,GET,http://localhost/crms/web/app_dev.php/vehicle/,1462169858,,302
+b268cc,::1,GET,http://localhost/crms/web/app_dev.php/vehicle/view,1462169859,,200
+cd2e79,::1,GET,http://localhost/crms/web/app_dev.php/vehicle/view/1,1462169863,2f4c5f,200
+2f4c5f,::1,GET,http://localhost/crms/web/app_dev.php/vehicle/view/1,1462169863,,500
+cdec91,::1,GET,http://localhost/crms/web/app_dev.php/vehicle/view/1,1462169887,,200
+75b9f4,::1,GET,http://localhost/crms/web/app_dev.php/vehicle/view,1462169940,,200

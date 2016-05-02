@@ -141,9 +141,17 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                 return array (  '_controller' => 'AppBundle\\Controller\\VehicleController::createAction',  '_route' => 'vehicle_create',);
             }
 
-            // vehicle_viewAll
-            if ($pathinfo === '/vehicle/view') {
-                return array (  '_controller' => 'AppBundle\\Controller\\VehicleController::viewallAction',  '_route' => 'vehicle_viewAll',);
+            if (0 === strpos($pathinfo, '/vehicle/view')) {
+                // vehicle_viewAll
+                if ($pathinfo === '/vehicle/view') {
+                    return array (  '_controller' => 'AppBundle\\Controller\\VehicleController::viewallAction',  '_route' => 'vehicle_viewAll',);
+                }
+
+                // vehicle_view
+                if (preg_match('#^/vehicle/view/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'vehicle_view')), array (  '_controller' => 'AppBundle\\Controller\\VehicleController::viewAction',));
+                }
+
             }
 
         }

@@ -1,0 +1,58 @@
+{# app/Resources/views/achievement/view.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block title %}
+Vehicle
+{% endblock %}
+
+{% block body %}
+
+
+<table style="width:100%">
+
+  <tr>
+    <th></th>
+    <th></th>
+  </tr>
+
+  <tr>
+    <td><b>Name:</td>
+    <td>{{vehicle.name|e}}</td>
+  </tr>
+
+  <tr>
+    <td><b>Type:</td>
+    <td>{{vehicle.type|e}}</td>
+  </tr>
+
+  <tr>
+    <td><b>Plate:</td>
+    <td>{{vehicle.plate|e}}</td>
+  </tr>
+
+    <tr>
+    <td><b>Fuel Type:</td>
+    <td>{{vehicle.fuel|e}}</td>
+  </tr>
+
+    <tr>
+    <td><b>Transmission:</td>
+    <td>{{vehicle.transmission|e}}</td>
+  </tr>
+
+    <tr>
+    <td><b>Description:</td>
+    <td>{{vehicle.type|e}}</td>
+  </tr>
+
+    <tr>
+    <td><b>State:</td>
+    <td>{%if vehicle.status==1 %} Available {% endif %}
+        {%if vehicle.status==0 %} Unavailable {% endif %}
+
+    </td>
+  </tr>
+
+
+</table>
+{% endblock %}
