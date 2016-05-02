@@ -3,6 +3,7 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use AppBundle\Controller\Connection;
 
 /**
  * Customer
@@ -55,9 +56,51 @@ class Customer
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $id;
+/*--------------------------manually added methods--------------------*/
 
+    public function save()
+    {
 
+      if($this->id ==null)
+        {
+           
+        $con = Connection::getConnectionObject()->getConnection();
+        $stmt = $con->prepare('INSERT INTO `customer` (`name`,`nic`, `contact_number`, `address`, `email`) VALUES (?,?, ?,?,?)');  
+        $stmt->bind_param("sssss",$this->name,$this->nic,$this->contactNumber,$this->address,$this->email);  
+        $stmt->execute();  
+        $stmt->close();
+        }
+        else
+        {
+        $con = Connection::getConnectionObject()->getConnection();
+        $stmt = $con->prepare('UPDATE vehicle SET name =?,nic=?,contact_number=?,address=?,email=? WHERE id =?');  
+        $stmt->bind_param("ssssss",$this->name,$this->type,$this->plate,$this->fuel,$this->transmission,$this->description,$this->status,$this->id);  
+        $stmt->execute();  
+        $stmt->close();   
+        }
+    }
 
+    public static function getOne($id)
+    {
+        $con = Connection::getConnectionObject()->getConnection();
+        // Check connection
+        if (mysqli_connect_errno()) 
+        {
+            echo "Failed to connect to MySQL: " . mysqli_connect_error();
+        }
+
+        $customer = new Customer();
+        $stmt = $con->prepare('SELECT customer.id, customer.name, customer.nic, customer.contact_number, customer.address, customer.email
+         FROM customer where customer.id=?');
+        $stmt->bind_param("s",$id);
+        $stmt->execute();
+
+        $stmt->bind_result($customer->id,$customer->name,$customer->nic,$customer->contactNumber,$customer->address,$customer->email);
+        $stmt->fetch();
+        $stmt->close();
+        return $customer;
+    }
+/*----------------------------------------------------------------------*/
     /**
      * Set name
      *
