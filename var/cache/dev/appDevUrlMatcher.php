@@ -100,6 +100,23 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
+        if (0 === strpos($pathinfo, '/customer')) {
+            // customer_home
+            if (rtrim($pathinfo, '/') === '/customer') {
+                if (substr($pathinfo, -1) !== '/') {
+                    return $this->redirect($pathinfo.'/', 'customer_home');
+                }
+
+                return array (  '_controller' => 'AppBundle\\Controller\\CustomerController::indexAction',  '_route' => 'customer_home',);
+            }
+
+            // customer_create
+            if ($pathinfo === '/customer/create') {
+                return array (  '_controller' => 'AppBundle\\Controller\\CustomerController::createAction',  '_route' => 'customer_create',);
+            }
+
+        }
+
         // homepage
         if (rtrim($pathinfo, '/') === '') {
             if (substr($pathinfo, -1) !== '/') {

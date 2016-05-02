@@ -1,8 +1,17 @@
 <?php
-nameSpace AppBundle/Controller;
+nameSpace AppBundle\Controller;
 
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Request;
+use AppBundle\Entity\Customer;  
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\FormError;
 
-class VehicleController extends Controller
+class CustomerController extends Controller
 {
 	/**
 	* @Route("/customer/", name="customer_home")
@@ -45,5 +54,13 @@ class VehicleController extends Controller
 
         // replace this example code with whatever you need
         return $this->render('customer/create.html.twig', array('form' => $form->createView()));
+    }
+
+	public function viewallAction( Request $request)
+    {
+        
+        $customers =  Customer::getAll();
+        return $this->render('customer/viewall.html.twig', array('customers' => $vehicles));
+
     }
 }
