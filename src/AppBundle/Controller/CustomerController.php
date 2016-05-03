@@ -56,11 +56,15 @@ class CustomerController extends Controller
         return $this->render('customer/create.html.twig', array('form' => $form->createView()));
     }
 
+
+       /**
+     * @Route("/customer/view", name="customer_viewAll")
+     */
 	public function viewallAction( Request $request)
     {
         
         $customers =  Customer::getAll();
-        return $this->render('customer/viewall.html.twig', array('customers' => $customers));
+        return $this->render('customer/viewAll.html.twig', array('customers' => $customers));
 
     }
 

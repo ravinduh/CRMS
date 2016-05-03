@@ -1,0 +1,42 @@
+{# app/Resources/views/achievement/view.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block title %}
+Customer
+{% endblock %}
+
+{% block body %}
+
+
+<table style="width:100%">
+
+  <tr>
+    <th></th>
+    <th></th>
+  </tr>
+
+  <tr>
+    <td><b>Name:</td>
+    <td>{{customer.name|e}}</td>
+  </tr>
+
+  <tr>
+    <td><b>NIC:</td>
+    <td>{{customer.nic|e}}</td>
+  </tr>
+
+  <tr>
+    <td><b>Contact Number:</td>
+    <td>{{customer.contactNumber|e}}</td>
+  </tr>
+
+    <tr>
+    <td><b>Address:</td>
+    <td>{{customer.email|e}}</td>
+  </tr>
+
+  
+
+
+</table>
+{% endblock %}

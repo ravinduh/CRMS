@@ -2,12 +2,65 @@
 <html>
     <head>
         <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
         <title>{% block title %}Welcome!{% endblock %}</title>
+
         {% block stylesheets %}{% endblock %}
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        <link rel="icon" type="image/x-icon" href="{{ asset('img/mora2.png') }}" />
+        <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}" />
+        <link rel="stylesheet" href="{{ asset('css/navbar.css') }}" />
+
+
+        {#Chosen#}
+        <link rel="stylesheet" href="{{ asset('css/chosen.min.css') }}" />
+        <script src="{{ asset('js/jquery-1.10.2.js')}}"></script>
+        <script src="{{ asset('js/chosen.jquery.min.js') }}"></script>
+
+        {#Custom Style#}
+        <link rel="stylesheet" href="{{ asset('css/style.css') }}" />
+
+
     </head>
     <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+
+<!-- Navbar -->
+<div id='cssmenu'>
+<ul>
+
+    {% if is_granted('ROLE_ADMIN') %}
+    <li ><a href='{{url('homepage')}}'><span>Home</span></a></li>
+    <li><a href='{{url('vehicle_home')}}'><span>Vehicles</span></a></li>
+    <li><a href='{{url('customer_home')}}'><span>Customers</span></a></li>
+
+   <!-- <li class='last'><a href='#'><span>Contact</span></a></li> -->
+
+
+    {% endif %}
+
+ 
+
+
+</ul>
+</div>
+
+
+      <!-- Content -->
+      <div class="panel panel-default">
+        <div class="panel-heading">{{ block('title') }}<div class="pull-right">{% block links %}{% endblock %}</div></div>
+        <div class="panel-body">
+
+          <div class='error_message'> {{ form_error | default("") }} </div>
+          {% block body %}{% endblock %}
+          {% block javascripts %}{% endblock %}
+        
+        </div>
+      </div>
+
+
+      <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+      <!-- Include all compiled plugins (below), or include individual files as needed -->
+      <script src="{{ asset('js/bootstrap.min.js') }}"></script>
     </body>
 </html>

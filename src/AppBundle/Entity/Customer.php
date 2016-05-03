@@ -101,7 +101,7 @@ class Customer
         return $customer;
     }
 
-        public static function getAll()
+    public static function getAll()
     {
         $con = Connection::getConnectionObject()->getConnection();
         // Check connection
@@ -125,7 +125,7 @@ class Customer
             $customer->setEmail($email);
            
 
-            array_push($customers,$customers); //Push one by one
+            array_push($customers,$customer); //Push one by one
         }
         $stmt->close();
         

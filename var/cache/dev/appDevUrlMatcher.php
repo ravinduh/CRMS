@@ -115,6 +115,19 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                 return array (  '_controller' => 'AppBundle\\Controller\\CustomerController::createAction',  '_route' => 'customer_create',);
             }
 
+            if (0 === strpos($pathinfo, '/customer/view')) {
+                // customer_viewAll
+                if ($pathinfo === '/customer/view') {
+                    return array (  '_controller' => 'AppBundle\\Controller\\CustomerController::viewallAction',  '_route' => 'customer_viewAll',);
+                }
+
+                // customer_view
+                if (preg_match('#^/customer/view/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'customer_view')), array (  '_controller' => 'AppBundle\\Controller\\CustomerController::viewAction',));
+                }
+
+            }
+
         }
 
         // homepage

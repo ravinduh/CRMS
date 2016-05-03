@@ -1,0 +1,52 @@
+{# app/Resources/views/default/new.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block title %}
+All Customers
+{% endblock %}
+
+{% block links %}
+    <div class="btn-group" >
+       <a href="{{url('customer_create')}}"> <button type="button" class="btn btn-xs btn-success">Create Customer</button></a>
+    </div>
+{% endblock %}
+
+
+{% block body %}
+<table width="100%">
+	<tr>
+		<th>Name</th>
+        <th>NIC</th>
+        <th>Contact Number</th>
+		<th>Address</th>
+		<th>Email</th>
+
+	</tr>
+
+    {% for cus in customers %}
+        <tr>
+        <td>
+        <a href="{{url('customer_view',{'id':cus.id})}}">{{ cus.name|e }}</a>
+        </td>
+
+        <td>{{ cus.nic|e}}
+        </td>
+
+		<td>{{ cus.contactNumber|e }}
+        </td>
+
+
+        <td>{{ cus.address|e }}
+        </td>
+
+        <td>{{ cus.email|e }}
+        </td>
+
+
+
+      
+        </tr>
+    {% endfor %}
+</ul>
+
+{% endblock %}
