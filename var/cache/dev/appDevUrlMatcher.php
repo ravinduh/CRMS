@@ -139,6 +139,36 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array (  '_controller' => 'AppBundle\\Controller\\DefaultController::indexAction',  '_route' => 'homepage',);
         }
 
+        if (0 === strpos($pathinfo, '/reservation')) {
+            // reservation_home
+            if (rtrim($pathinfo, '/') === '/reservation') {
+                if (substr($pathinfo, -1) !== '/') {
+                    return $this->redirect($pathinfo.'/', 'reservation_home');
+                }
+
+                return array (  '_controller' => 'AppBundle\\Controller\\ReservationController::indexAction',  '_route' => 'reservation_home',);
+            }
+
+            // reservation_create
+            if ($pathinfo === '/reservation/create') {
+                return array (  '_controller' => 'AppBundle\\Controller\\ReservationController::createAction',  '_route' => 'reservation_create',);
+            }
+
+            if (0 === strpos($pathinfo, '/reservation/view')) {
+                // reservation_viewAll
+                if ($pathinfo === '/reservation/viewAll') {
+                    return array (  '_controller' => 'AppBundle\\Controller\\ReservationController::viewAllAction',  '_route' => 'reservation_viewAll',);
+                }
+
+                // reservation_view
+                if (preg_match('#^/reservation/view/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'reservation_view')), array (  '_controller' => 'AppBundle\\Controller\\ReservationController::viewAction',));
+                }
+
+            }
+
+        }
+
         if (0 === strpos($pathinfo, '/vehicle')) {
             // vehicle_home
             if (rtrim($pathinfo, '/') === '/vehicle') {

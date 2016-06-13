@@ -13,7 +13,7 @@ All Vehicles
 
 
 {% block body %}
-<table width="100%">
+<table class="table table-striped table-responsive" width="100%">
 	<tr>
 		<th>Name</th>
         <th>Type</th>
@@ -24,10 +24,13 @@ All Vehicles
 		<th>Status</th>
 	</tr>
 
+
+
     {% for vehi in vehicles %}
         <tr>
         <td>
-        <a href="{{url('vehicle_view',{'id':vehi.id})}}">{{ vehi.name|e }}</a>
+        <a href="{{url('vehicle_view',{'id':vehi.id})}}">{{ vehi.name|e }}</a><br>
+            <img src="{{ asset('img/'~vehi.id~'.jpg') }}" width="200" height="200" alt="Symfony!" />
         </td>
 
         <td>{{ vehi.type|e}}

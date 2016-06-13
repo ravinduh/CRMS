@@ -2,6 +2,8 @@ SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
 
+CREATE SCHEMA IF NOT EXISTS `crms` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci ;
+USE `crms` ;
 
 -- -----------------------------------------------------
 -- Table `crms`.`vehicle`
@@ -15,6 +17,7 @@ CREATE  TABLE IF NOT EXISTS `crms`.`vehicle` (
   `transmission` VARCHAR(10) NOT NULL ,
   `description` VARCHAR(600) NULL ,
   `status` TINYINT(1) NOT NULL ,
+  `image` BLOB NULL ,
   PRIMARY KEY (`id`) )
 ENGINE = InnoDB;
 
@@ -70,12 +73,12 @@ ENGINE = InnoDB;
 CREATE  TABLE IF NOT EXISTS `crms`.`customer_reserve_vehicle` (
   `customer_id` INT NOT NULL ,
   `vehicle_id` INT NOT NULL ,
-  `time_slot_id` INT NOT NULL ,
   `id` INT NOT NULL AUTO_INCREMENT ,
+  `start_date` DATE NOT NULL ,
+  `end_date` DATE NOT NULL ,
   PRIMARY KEY (`id`) ,
   INDEX `fk_customer_has_vehicle_vehicle1_idx` (`vehicle_id` ASC) ,
   INDEX `fk_customer_has_vehicle_customer_idx` (`customer_id` ASC) ,
-  INDEX `fk_customer_reserve_vehicle_time_slot1_idx` (`time_slot_id` ASC) ,
   CONSTRAINT `fk_customer_has_vehicle_customer`
     FOREIGN KEY (`customer_id` )
     REFERENCES `crms`.`customer` (`id` )
@@ -84,11 +87,6 @@ CREATE  TABLE IF NOT EXISTS `crms`.`customer_reserve_vehicle` (
   CONSTRAINT `fk_customer_has_vehicle_vehicle1`
     FOREIGN KEY (`vehicle_id` )
     REFERENCES `crms`.`vehicle` (`id` )
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_customer_reserve_vehicle_time_slot1`
-    FOREIGN KEY (`time_slot_id` )
-    REFERENCES `crms`.`time_slot` (`id` )
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
@@ -100,12 +98,12 @@ ENGINE = InnoDB;
 CREATE  TABLE IF NOT EXISTS `crms`.`customer_reserve_vehicle` (
   `customer_id` INT NOT NULL ,
   `vehicle_id` INT NOT NULL ,
-  `time_slot_id` INT NOT NULL ,
   `id` INT NOT NULL AUTO_INCREMENT ,
+  `start_date` DATE NOT NULL ,
+  `end_date` DATE NOT NULL ,
   PRIMARY KEY (`id`) ,
   INDEX `fk_customer_has_vehicle_vehicle1_idx` (`vehicle_id` ASC) ,
   INDEX `fk_customer_has_vehicle_customer_idx` (`customer_id` ASC) ,
-  INDEX `fk_customer_reserve_vehicle_time_slot1_idx` (`time_slot_id` ASC) ,
   CONSTRAINT `fk_customer_has_vehicle_customer`
     FOREIGN KEY (`customer_id` )
     REFERENCES `crms`.`customer` (`id` )
@@ -114,11 +112,6 @@ CREATE  TABLE IF NOT EXISTS `crms`.`customer_reserve_vehicle` (
   CONSTRAINT `fk_customer_has_vehicle_vehicle1`
     FOREIGN KEY (`vehicle_id` )
     REFERENCES `crms`.`vehicle` (`id` )
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_customer_reserve_vehicle_time_slot1`
-    FOREIGN KEY (`time_slot_id` )
-    REFERENCES `crms`.`time_slot` (`id` )
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
@@ -172,6 +165,15 @@ CREATE  TABLE IF NOT EXISTS `crms`.`customer_feedback_vehicle` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
+
+-- -----------------------------------------------------
+-- Table `crms`.`table1`
+-- -----------------------------------------------------
+CREATE  TABLE IF NOT EXISTS `crms`.`table1` (
+)
+ENGINE = InnoDB;
+
+USE `crms` ;
 
 -- -----------------------------------------------------
 -- Placeholder table for view `crms`.`view1`

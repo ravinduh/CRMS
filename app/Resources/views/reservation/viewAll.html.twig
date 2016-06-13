@@ -1,0 +1,52 @@
+{# app/Resources/views/default/new.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    All Reservations
+{% endblock %}
+
+{% block links %}
+    <div class="btn-group" >
+        <a href="{{url('reservation_create')}}"> <button type="button" class="btn btn-xs btn-success">Make Reservation</button></a>
+    </div>
+{% endblock %}
+
+
+{% block body %}
+    <table width="100%">
+    <tr>
+        <th>Customer Name</th>
+        <th>Car</th>
+        <th>Start Date</th>
+        <th>End Date</th>
+
+    </tr>
+
+    {% for r in reservations %}
+        <tr>
+            <td>
+                <a href="{{url('customer_view',{'id':r.customerId})}}">{{r.customerName|e }}</a>
+            </td>
+
+            <td>
+                <a href="{{url('vehicle_view',{'id':r.vehicleId})}}">{{r.vehicleName|e }}</a>
+            </td>
+
+
+            <td>{{ r.startDate|e }}
+            </td>
+
+
+            <td>{{ r.endDate|e }}
+            </td>
+
+
+
+
+
+
+        </tr>
+    {% endfor %}
+    </ul>
+
+{% endblock %}

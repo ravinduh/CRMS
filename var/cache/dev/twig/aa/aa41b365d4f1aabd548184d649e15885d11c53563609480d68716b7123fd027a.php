@@ -23,34 +23,34 @@ class __TwigTemplate_ebc31a55ef2d8ffb2529cea95427497d4d1f334bdf2d33149955c0f312f
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_a3f3da80ef0dfc9dd4c96ecca7e67cdaafae454d23718fbc6fff0b6980837aa8 = $this->env->getExtension("native_profiler");
-        $__internal_a3f3da80ef0dfc9dd4c96ecca7e67cdaafae454d23718fbc6fff0b6980837aa8->enter($__internal_a3f3da80ef0dfc9dd4c96ecca7e67cdaafae454d23718fbc6fff0b6980837aa8_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "vehicle/viewall.html.twig"));
+        $__internal_dd91876b1ebd86c6f1dfef84864fe39d705a6ba86496fd226cd211bfc374a3d2 = $this->env->getExtension("native_profiler");
+        $__internal_dd91876b1ebd86c6f1dfef84864fe39d705a6ba86496fd226cd211bfc374a3d2->enter($__internal_dd91876b1ebd86c6f1dfef84864fe39d705a6ba86496fd226cd211bfc374a3d2_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "vehicle/viewall.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_a3f3da80ef0dfc9dd4c96ecca7e67cdaafae454d23718fbc6fff0b6980837aa8->leave($__internal_a3f3da80ef0dfc9dd4c96ecca7e67cdaafae454d23718fbc6fff0b6980837aa8_prof);
+        $__internal_dd91876b1ebd86c6f1dfef84864fe39d705a6ba86496fd226cd211bfc374a3d2->leave($__internal_dd91876b1ebd86c6f1dfef84864fe39d705a6ba86496fd226cd211bfc374a3d2_prof);
 
     }
 
     // line 4
     public function block_title($context, array $blocks = array())
     {
-        $__internal_f8420a445e66aa33e1f1e957ebc6b6a6b6e0876eb910a2bd1d829b8615e8b9ff = $this->env->getExtension("native_profiler");
-        $__internal_f8420a445e66aa33e1f1e957ebc6b6a6b6e0876eb910a2bd1d829b8615e8b9ff->enter($__internal_f8420a445e66aa33e1f1e957ebc6b6a6b6e0876eb910a2bd1d829b8615e8b9ff_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
+        $__internal_1f0898101496a7b46379473ad3f6417457e9f4aea2ec8cbfc358ab23ef0abc24 = $this->env->getExtension("native_profiler");
+        $__internal_1f0898101496a7b46379473ad3f6417457e9f4aea2ec8cbfc358ab23ef0abc24->enter($__internal_1f0898101496a7b46379473ad3f6417457e9f4aea2ec8cbfc358ab23ef0abc24_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
 
         // line 5
         echo "All Vehicles
 ";
         
-        $__internal_f8420a445e66aa33e1f1e957ebc6b6a6b6e0876eb910a2bd1d829b8615e8b9ff->leave($__internal_f8420a445e66aa33e1f1e957ebc6b6a6b6e0876eb910a2bd1d829b8615e8b9ff_prof);
+        $__internal_1f0898101496a7b46379473ad3f6417457e9f4aea2ec8cbfc358ab23ef0abc24->leave($__internal_1f0898101496a7b46379473ad3f6417457e9f4aea2ec8cbfc358ab23ef0abc24_prof);
 
     }
 
     // line 8
     public function block_links($context, array $blocks = array())
     {
-        $__internal_8c7ef2266142d28a1b32cf58454136d01d91aa8654730722fe45bb8773f39403 = $this->env->getExtension("native_profiler");
-        $__internal_8c7ef2266142d28a1b32cf58454136d01d91aa8654730722fe45bb8773f39403->enter($__internal_8c7ef2266142d28a1b32cf58454136d01d91aa8654730722fe45bb8773f39403_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "links"));
+        $__internal_e61ce9b59a6fd13a65227862e45d2b7c8165bd87dce8b8fc66d446b4c0198fb5 = $this->env->getExtension("native_profiler");
+        $__internal_e61ce9b59a6fd13a65227862e45d2b7c8165bd87dce8b8fc66d446b4c0198fb5->enter($__internal_e61ce9b59a6fd13a65227862e45d2b7c8165bd87dce8b8fc66d446b4c0198fb5_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "links"));
 
         // line 9
         echo "    <div class=\"btn-group\" >
@@ -61,18 +61,18 @@ class __TwigTemplate_ebc31a55ef2d8ffb2529cea95427497d4d1f334bdf2d33149955c0f312f
     </div>
 ";
         
-        $__internal_8c7ef2266142d28a1b32cf58454136d01d91aa8654730722fe45bb8773f39403->leave($__internal_8c7ef2266142d28a1b32cf58454136d01d91aa8654730722fe45bb8773f39403_prof);
+        $__internal_e61ce9b59a6fd13a65227862e45d2b7c8165bd87dce8b8fc66d446b4c0198fb5->leave($__internal_e61ce9b59a6fd13a65227862e45d2b7c8165bd87dce8b8fc66d446b4c0198fb5_prof);
 
     }
 
     // line 15
     public function block_body($context, array $blocks = array())
     {
-        $__internal_457cb6f5efe831d843225436d335426c0b75e89e94d4e3166415278547d29c5a = $this->env->getExtension("native_profiler");
-        $__internal_457cb6f5efe831d843225436d335426c0b75e89e94d4e3166415278547d29c5a->enter($__internal_457cb6f5efe831d843225436d335426c0b75e89e94d4e3166415278547d29c5a_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_cef159892e70572a8d2e75615228ee86e311728490f8dc05199f6065156f692b = $this->env->getExtension("native_profiler");
+        $__internal_cef159892e70572a8d2e75615228ee86e311728490f8dc05199f6065156f692b->enter($__internal_cef159892e70572a8d2e75615228ee86e311728490f8dc05199f6065156f692b_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 16
-        echo "<table width=\"100%\">
+        echo "<table class=\"table table-striped table-responsive\" width=\"100%\">
 \t<tr>
 \t\t<th>Name</th>
         <th>Type</th>
@@ -83,65 +83,71 @@ class __TwigTemplate_ebc31a55ef2d8ffb2529cea95427497d4d1f334bdf2d33149955c0f312f
 \t\t<th>Status</th>
 \t</tr>
 
+
+
     ";
-        // line 27
+        // line 29
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["vehicles"]) ? $context["vehicles"] : $this->getContext($context, "vehicles")));
         foreach ($context['_seq'] as $context["_key"] => $context["vehi"]) {
-            // line 28
+            // line 30
             echo "        <tr>
         <td>
         <a href=\"";
-            // line 30
+            // line 32
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getUrl("vehicle_view", array("id" => $this->getAttribute($context["vehi"], "id", array()))), "html", null, true);
             echo "\">";
             echo twig_escape_filter($this->env, $this->getAttribute($context["vehi"], "name", array()));
-            echo "</a>
+            echo "</a><br>
+            <img src=\"";
+            // line 33
+            echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl((("img/" . $this->getAttribute($context["vehi"], "id", array())) . ".jpg")), "html", null, true);
+            echo "\" width=\"200\" height=\"200\" alt=\"Symfony!\" />
         </td>
 
         <td>";
-            // line 33
+            // line 36
             echo twig_escape_filter($this->env, $this->getAttribute($context["vehi"], "type", array()));
             echo "
         </td>
 
 \t\t<td>";
-            // line 36
+            // line 39
             echo twig_escape_filter($this->env, $this->getAttribute($context["vehi"], "plate", array()));
             echo "
         </td>
 
 
         <td>";
-            // line 40
+            // line 43
             echo twig_escape_filter($this->env, $this->getAttribute($context["vehi"], "fuel", array()));
             echo "
         </td>
 
         <td>";
-            // line 43
+            // line 46
             echo twig_escape_filter($this->env, $this->getAttribute($context["vehi"], "transmission", array()));
             echo "
         </td>
 
         <td>";
-            // line 46
+            // line 49
             echo twig_escape_filter($this->env, $this->getAttribute($context["vehi"], "description", array()));
             echo "
         </td>
 
 
        \t<td>";
-            // line 50
+            // line 53
             if (($this->getAttribute($context["vehi"], "status", array()) == 1)) {
                 echo " Available ";
             }
-            // line 51
+            // line 54
             echo "            ";
             if (($this->getAttribute($context["vehi"], "status", array()) == 0)) {
                 echo " Unavailable ";
             }
-            // line 52
+            // line 55
             echo "
         </td>
         </tr>
@@ -150,12 +156,12 @@ class __TwigTemplate_ebc31a55ef2d8ffb2529cea95427497d4d1f334bdf2d33149955c0f312f
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['vehi'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 56
+        // line 59
         echo "</ul>
 
 ";
         
-        $__internal_457cb6f5efe831d843225436d335426c0b75e89e94d4e3166415278547d29c5a->leave($__internal_457cb6f5efe831d843225436d335426c0b75e89e94d4e3166415278547d29c5a_prof);
+        $__internal_cef159892e70572a8d2e75615228ee86e311728490f8dc05199f6065156f692b->leave($__internal_cef159892e70572a8d2e75615228ee86e311728490f8dc05199f6065156f692b_prof);
 
     }
 
@@ -171,7 +177,7 @@ class __TwigTemplate_ebc31a55ef2d8ffb2529cea95427497d4d1f334bdf2d33149955c0f312f
 
     public function getDebugInfo()
     {
-        return array (  154 => 56,  145 => 52,  140 => 51,  136 => 50,  129 => 46,  123 => 43,  117 => 40,  110 => 36,  104 => 33,  96 => 30,  92 => 28,  88 => 27,  75 => 16,  69 => 15,  59 => 10,  56 => 9,  50 => 8,  42 => 5,  36 => 4,  11 => 2,);
+        return array (  160 => 59,  151 => 55,  146 => 54,  142 => 53,  135 => 49,  129 => 46,  123 => 43,  116 => 39,  110 => 36,  104 => 33,  98 => 32,  94 => 30,  90 => 29,  75 => 16,  69 => 15,  59 => 10,  56 => 9,  50 => 8,  42 => 5,  36 => 4,  11 => 2,);
     }
 }
 /* {# app/Resources/views/default/new.html.twig #}*/
@@ -189,7 +195,7 @@ class __TwigTemplate_ebc31a55ef2d8ffb2529cea95427497d4d1f334bdf2d33149955c0f312f
 /* */
 /* */
 /* {% block body %}*/
-/* <table width="100%">*/
+/* <table class="table table-striped table-responsive" width="100%">*/
 /* 	<tr>*/
 /* 		<th>Name</th>*/
 /*         <th>Type</th>*/
@@ -200,10 +206,13 @@ class __TwigTemplate_ebc31a55ef2d8ffb2529cea95427497d4d1f334bdf2d33149955c0f312f
 /* 		<th>Status</th>*/
 /* 	</tr>*/
 /* */
+/* */
+/* */
 /*     {% for vehi in vehicles %}*/
 /*         <tr>*/
 /*         <td>*/
-/*         <a href="{{url('vehicle_view',{'id':vehi.id})}}">{{ vehi.name|e }}</a>*/
+/*         <a href="{{url('vehicle_view',{'id':vehi.id})}}">{{ vehi.name|e }}</a><br>*/
+/*             <img src="{{ asset('img/'~vehi.id~'.jpg') }}" width="200" height="200" alt="Symfony!" />*/
 /*         </td>*/
 /* */
 /*         <td>{{ vehi.type|e}}*/

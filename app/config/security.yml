@@ -15,9 +15,12 @@ security:
 
         main:
             anonymous: ~
+            form_login:
+              login_path: login
+              check_login: login
             # activate different ways to authenticate
 
-            # http_basic: ~
+            http_basic: ~
             # http://symfony.com/doc/current/book/security.html#a-configuring-how-your-users-will-authenticate
 
             # form_login: ~

@@ -22,13 +22,13 @@
 
 
     </head>
-    <body>
+    <body style="font-size: 16px">
 
 <!-- Navbar -->
 <div id='cssmenu'>
 <ul>
 
-    {% if is_granted('ROLE_ADMIN') %}
+    {#{% if is_granted('ROLE_ADMIN') %}#}
     <li ><a href='{{url('homepage')}}'><span>Home</span></a></li>
     <li><a href='{{url('vehicle_home')}}'><span>Vehicles</span></a></li>
     <li><a href='{{url('customer_home')}}'><span>Customers</span></a></li>
@@ -36,7 +36,7 @@
    <!-- <li class='last'><a href='#'><span>Contact</span></a></li> -->
 
 
-    {% endif %}
+    {#{% endif %}#}
 
  
 
