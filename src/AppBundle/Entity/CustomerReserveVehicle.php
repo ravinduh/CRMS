@@ -143,7 +143,18 @@ class CustomerReserveVehicle
         
         return $reservations;
     }
-/*----------------------------------------------------------------------------*/
+
+    public function getStartDate()
+    {
+        return $this->startDate;
+    }
+    public function getEndDate()
+    {
+        return $this->endDate;
+    }
+
+    /*----------------------------------------------------------------------------*/
+
 
     public function setId($id)
     {

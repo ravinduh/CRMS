@@ -78,6 +78,7 @@ class Vehicle
 
 /*---------------manually added mathods--------------------------------*/
     public function getError(){ return $this->errorMessage;}
+    public function setError($err){  $this->errorMessage = $err;}
 
     public function save()
     {
@@ -174,35 +175,46 @@ class Vehicle
 
     }
 
-    public function isAvailable($id, $startDate, $endDate)
+    public function isAvailable($sDate,$eDate)
     {
-        $startDate = $startDate->format('Y-m-d');
-        $endDate = $endDate?$endDate->format('Y-m-d'):null;
-
-        $vehicle = Vehicle::getOne($id);
-        $reservations = CustomerReserveVehicle::getAll();
-
-        // Check connection
-        if (mysqli_connect_errno())
+        $sDate = $sDate->format('Y-m-d');
+        $eDate = $eDate?$eDate->format('Y-m-d'):null;
+        $state = true;
+        foreach (CustomerReserveVehicle::getAll() as $res )
         {
-            echo "Failed to connect to MySQL: " . mysqli_connect_error();
+
+//            if(($sDate < $res->startDate && $res->startDate < $eDate) || ($eDate< $res->endDate && $res->endDate< $eDate))
+            if((($res->startDate)< $eDate) && ($eDate < ($res->endDate)) )
+            {
+                $state = false;
+            }
+            if((($res->startDate)< $sDate) && ($sDate < ($res->endDate)) )
+            {
+                $state = false;
+            }
+
         }
-        $con = Connection::getConnectionObject()->getConnection();
-        $stmt = $con->prepare('SELECT `start_date`  FROM customer_reserve_vehicle WHERE start_date BETWEEN ? AND ? AND id=?');
-        $stmt->bind_param("sss",$startDate,$endDate, $id);
-        $stmt->execute();
-        $stmt->bind_result($dates);
-        $stmt->close();
-        $stmt = $con->prepare('SELECT `end_date`  FROM customer_reserve_vehicle WHERE end_date BETWEEN ? AND ? AND id=?');
-        $stmt->bind_param("sss",$startDate,$endDate, $id);
-        $stmt->execute();
-        $stmt->bind_result($dates);
-        $stmt->close();
+//        // Check connection
+//        if (mysqli_connect_errno())
+//        {
+//            echo "Failed to connect to MySQL: " . mysqli_connect_error();
+//        }
+//        $con = Connection::getConnectionObject()->getConnection();
+//        $stmt = $con->prepare('SELECT `start_date`  FROM customer_reserve_vehicle WHERE start_date BETWEEN ? AND ? AND id=?');
+//        $stmt->bind_param("sss",$startDate,$endDate, $this->id);
+//        $stmt->execute();
+//        $stmt->bind_result($dates);
+//        $stmt->close();
+//        $stmt = $con->prepare('SELECT `end_date`  FROM customer_reserve_vehicle WHERE end_date BETWEEN ? AND ? AND id=?');
+//        $stmt->bind_param("sss",$startDate,$endDate, $this->id);
+//        $stmt->execute();
+//        $stmt->bind_result($dates);
+//        $stmt->close();
 
-        if ($vehicle->getStatus() == 'rented'){$this->errorMessage = "Vehicle is not available";return false;}
-        if ($dates !== null){$this->errorMessage = "Vehicle is reserved";return false; }
-        else {return true;}
+        if ($this->status == 'rented'){$this->errorMessage = "Vehicle is not available";$state = false;}
 
+
+        return $state;
     }
 
 

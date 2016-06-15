@@ -73,21 +73,27 @@ class ReservationController extends Controller
             ->getForm();
 
         $form->handleRequest($request);
-
+        $vehicle= Vehicle::getOne($form["vehicleId"]->getData());
         if ($form->isSubmitted()) {
             // ... perform some action, such as saving the task to the database
 
 
             // changes vehicle status to reserved
-            $vehicle= new Vehicle();
-           if ( $vehicle->isAvailable($form["vehicleId"]->getData(),$form["startDate"]->getData(),$form["endDate"]->getData())){
 
+           if ( $vehicle->isAvailable($form["startDate"]->getData(),$form["endDate"]->getData()))
+           {
+               // changes vehicle status to reserved
                $vehicle->changeStatus('reserved',$form["vehicleId"]->getData());
                $reservation->save();
+               return $this->redirectToRoute('reservation_viewAll');
            }
+            else
+            {
+                $vehicle->setError("Vehicle Unavailable in the given time period");
+            }
 
 
-            return $this->redirectToRoute('reservation_viewAll');
+
         }
 
         // replace this example code with whatever you need
