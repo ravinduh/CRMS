@@ -22,34 +22,34 @@ class __TwigTemplate_8fff062c6def10b5c6004d2c200d0a6aa0db8bfcd8e9d823bcddd630732
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_3182ba96bad0b46871e62423f6f18afdf5ee0ea34058413d5d584f1ea0b62c18 = $this->env->getExtension("native_profiler");
-        $__internal_3182ba96bad0b46871e62423f6f18afdf5ee0ea34058413d5d584f1ea0b62c18->enter($__internal_3182ba96bad0b46871e62423f6f18afdf5ee0ea34058413d5d584f1ea0b62c18_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "vehicle/view.html.twig"));
+        $__internal_79901c02b3eb686bd77985aba7e031ef5acd1e0132208eed1986da237a5c3676 = $this->env->getExtension("native_profiler");
+        $__internal_79901c02b3eb686bd77985aba7e031ef5acd1e0132208eed1986da237a5c3676->enter($__internal_79901c02b3eb686bd77985aba7e031ef5acd1e0132208eed1986da237a5c3676_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "vehicle/view.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_3182ba96bad0b46871e62423f6f18afdf5ee0ea34058413d5d584f1ea0b62c18->leave($__internal_3182ba96bad0b46871e62423f6f18afdf5ee0ea34058413d5d584f1ea0b62c18_prof);
+        $__internal_79901c02b3eb686bd77985aba7e031ef5acd1e0132208eed1986da237a5c3676->leave($__internal_79901c02b3eb686bd77985aba7e031ef5acd1e0132208eed1986da237a5c3676_prof);
 
     }
 
     // line 4
     public function block_title($context, array $blocks = array())
     {
-        $__internal_0d7a8314adf4aeb93d51e3730d06771c4f39477fdd42382d18a75f1ab70fe699 = $this->env->getExtension("native_profiler");
-        $__internal_0d7a8314adf4aeb93d51e3730d06771c4f39477fdd42382d18a75f1ab70fe699->enter($__internal_0d7a8314adf4aeb93d51e3730d06771c4f39477fdd42382d18a75f1ab70fe699_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
+        $__internal_f5cc34aa0426987dd39983e0f5a23d5d186a70e4fbb0179db83aa4b907a98a9a = $this->env->getExtension("native_profiler");
+        $__internal_f5cc34aa0426987dd39983e0f5a23d5d186a70e4fbb0179db83aa4b907a98a9a->enter($__internal_f5cc34aa0426987dd39983e0f5a23d5d186a70e4fbb0179db83aa4b907a98a9a_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
 
         // line 5
         echo "Vehicle
 ";
         
-        $__internal_0d7a8314adf4aeb93d51e3730d06771c4f39477fdd42382d18a75f1ab70fe699->leave($__internal_0d7a8314adf4aeb93d51e3730d06771c4f39477fdd42382d18a75f1ab70fe699_prof);
+        $__internal_f5cc34aa0426987dd39983e0f5a23d5d186a70e4fbb0179db83aa4b907a98a9a->leave($__internal_f5cc34aa0426987dd39983e0f5a23d5d186a70e4fbb0179db83aa4b907a98a9a_prof);
 
     }
 
     // line 8
     public function block_body($context, array $blocks = array())
     {
-        $__internal_6a79775bdc3303aa8619f194fd97c661e2ac80e3b2bc3c2cb6750407f7cfe04a = $this->env->getExtension("native_profiler");
-        $__internal_6a79775bdc3303aa8619f194fd97c661e2ac80e3b2bc3c2cb6750407f7cfe04a->enter($__internal_6a79775bdc3303aa8619f194fd97c661e2ac80e3b2bc3c2cb6750407f7cfe04a_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_98617845ea1e1f5a370b3878ec08cc54a5270853a79f8c67e91f82d30f33dd52 = $this->env->getExtension("native_profiler");
+        $__internal_98617845ea1e1f5a370b3878ec08cc54a5270853a79f8c67e91f82d30f33dd52->enter($__internal_98617845ea1e1f5a370b3878ec08cc54a5270853a79f8c67e91f82d30f33dd52_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 9
         echo "
@@ -110,18 +110,23 @@ class __TwigTemplate_8fff062c6def10b5c6004d2c200d0a6aa0db8bfcd8e9d823bcddd630732
   </tr>
 
     <tr>
-    <td><b>State:</td>
+    <td><b>State: </td>
     <td>";
         // line 50
-        if (($this->getAttribute((isset($context["vehicle"]) ? $context["vehicle"] : $this->getContext($context, "vehicle")), "status", array()) == 1)) {
+        if (($this->getAttribute((isset($context["vehicle"]) ? $context["vehicle"] : $this->getContext($context, "vehicle")), "status", array()) == "available")) {
             echo " Available ";
         }
         // line 51
         echo "        ";
-        if (($this->getAttribute((isset($context["vehicle"]) ? $context["vehicle"] : $this->getContext($context, "vehicle")), "status", array()) == 0)) {
+        if (($this->getAttribute((isset($context["vehicle"]) ? $context["vehicle"] : $this->getContext($context, "vehicle")), "status", array()) == "rented")) {
             echo " Unavailable ";
         }
         // line 52
+        echo "        ";
+        if (($this->getAttribute((isset($context["vehicle"]) ? $context["vehicle"] : $this->getContext($context, "vehicle")), "status", array()) == "reserved")) {
+            echo " Reserved ";
+        }
+        // line 53
         echo "
     </td>
   </tr>
@@ -130,7 +135,7 @@ class __TwigTemplate_8fff062c6def10b5c6004d2c200d0a6aa0db8bfcd8e9d823bcddd630732
 </table>
 ";
         
-        $__internal_6a79775bdc3303aa8619f194fd97c661e2ac80e3b2bc3c2cb6750407f7cfe04a->leave($__internal_6a79775bdc3303aa8619f194fd97c661e2ac80e3b2bc3c2cb6750407f7cfe04a_prof);
+        $__internal_98617845ea1e1f5a370b3878ec08cc54a5270853a79f8c67e91f82d30f33dd52->leave($__internal_98617845ea1e1f5a370b3878ec08cc54a5270853a79f8c67e91f82d30f33dd52_prof);
 
     }
 
@@ -146,7 +151,7 @@ class __TwigTemplate_8fff062c6def10b5c6004d2c200d0a6aa0db8bfcd8e9d823bcddd630732
 
     public function getDebugInfo()
     {
-        return array (  125 => 52,  120 => 51,  116 => 50,  108 => 45,  100 => 40,  92 => 35,  84 => 30,  76 => 25,  68 => 20,  55 => 9,  49 => 8,  41 => 5,  35 => 4,  11 => 2,);
+        return array (  130 => 53,  125 => 52,  120 => 51,  116 => 50,  108 => 45,  100 => 40,  92 => 35,  84 => 30,  76 => 25,  68 => 20,  55 => 9,  49 => 8,  41 => 5,  35 => 4,  11 => 2,);
     }
 }
 /* {# app/Resources/views/achievement/view.html.twig #}*/
@@ -197,9 +202,10 @@ class __TwigTemplate_8fff062c6def10b5c6004d2c200d0a6aa0db8bfcd8e9d823bcddd630732
 /*   </tr>*/
 /* */
 /*     <tr>*/
-/*     <td><b>State:</td>*/
-/*     <td>{%if vehicle.status==1 %} Available {% endif %}*/
-/*         {%if vehicle.status==0 %} Unavailable {% endif %}*/
+/*     <td><b>State: </td>*/
+/*     <td>{%if vehicle.status=='available' %} Available {% endif %}*/
+/*         {%if vehicle.status=='rented' %} Unavailable {% endif %}*/
+/*         {%if vehicle.status=='reserved' %} Reserved {% endif %}*/
 /* */
 /*     </td>*/
 /*   </tr>*/

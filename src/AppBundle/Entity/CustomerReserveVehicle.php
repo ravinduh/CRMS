@@ -61,7 +61,11 @@ class CustomerReserveVehicle
     public $endDate;
 
 /*-----------------------------Manually added methods---------------------------------*/
-   // under construction
+ //reservation validation
+    public function validate()
+    {
+
+    }
     public function save()
     {
         $this->startDate = $this->startDate?$this->startDate->format('Y-m-d'):null;

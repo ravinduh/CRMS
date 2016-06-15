@@ -169,6 +169,16 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
+        // login
+        if ($pathinfo === '/login') {
+            return array (  '_controller' => 'AppBundle\\Controller\\SecurityController::loginAction',  '_route' => 'login',);
+        }
+
+        // signup
+        if ($pathinfo === '/signup') {
+            return array (  '_controller' => 'AppBundle\\Controller\\SecurityController::signupAction',  '_route' => 'signup',);
+        }
+
         if (0 === strpos($pathinfo, '/vehicle')) {
             // vehicle_home
             if (rtrim($pathinfo, '/') === '/vehicle') {
@@ -195,6 +205,11 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                     return $this->mergeDefaults(array_replace($matches, array('_route' => 'vehicle_view')), array (  '_controller' => 'AppBundle\\Controller\\VehicleController::viewAction',));
                 }
 
+            }
+
+            // vehicle_dispatch
+            if (0 === strpos($pathinfo, '/vehicle/changeStatus') && preg_match('#^/vehicle/changeStatus/(?P<id>[^/]++)/(?P<status>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'vehicle_dispatch')), array (  '_controller' => 'AppBundle\\Controller\\VehicleController::changeStatusAction',));
             }
 
         }

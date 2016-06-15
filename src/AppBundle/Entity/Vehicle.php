@@ -3,6 +3,7 @@
 namespace AppBundle\Entity;
 
 use AppBundle\Controller\Connection;
+use AppBundle\Entity\CustomerReserveVehicle;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -57,11 +58,11 @@ class Vehicle
     private $description;
 
     /**
-     * @var boolean
+     * @var enum
      *
      * @ORM\Column(name="status", type="boolean", nullable=false)
      */
-    private $status;
+    public $status;
 
     /**
      * @var integer
@@ -71,9 +72,13 @@ class Vehicle
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $id;
+    private $errorMessage;
+
 
 
 /*---------------manually added mathods--------------------------------*/
+    public function getError(){ return $this->errorMessage;}
+
     public function save()
     {
 
@@ -152,6 +157,54 @@ class Vehicle
         return $vehicles;
 
     }
+
+    public function changeStatus($vehicleStatus, $id)
+    {
+
+        // Check connection
+        if (mysqli_connect_errno())
+        {
+            echo "Failed to connect to MySQL: " . mysqli_connect_error();
+        }
+        $con = Connection::getConnectionObject()->getConnection();
+        $stmt = $con->prepare('UPDATE `vehicle` SET status=? WHERE id=?');
+        $stmt->bind_param("ss",$vehicleStatus,$id);
+        $stmt->execute();
+        $stmt->close();
+
+    }
+
+    public function isAvailable($id, $startDate, $endDate)
+    {
+        $startDate = $startDate->format('Y-m-d');
+        $endDate = $endDate?$endDate->format('Y-m-d'):null;
+
+        $vehicle = Vehicle::getOne($id);
+        $reservations = CustomerReserveVehicle::getAll();
+
+        // Check connection
+        if (mysqli_connect_errno())
+        {
+            echo "Failed to connect to MySQL: " . mysqli_connect_error();
+        }
+        $con = Connection::getConnectionObject()->getConnection();
+        $stmt = $con->prepare('SELECT `start_date`  FROM customer_reserve_vehicle WHERE start_date BETWEEN ? AND ? AND id=?');
+        $stmt->bind_param("sss",$startDate,$endDate, $id);
+        $stmt->execute();
+        $stmt->bind_result($dates);
+        $stmt->close();
+        $stmt = $con->prepare('SELECT `end_date`  FROM customer_reserve_vehicle WHERE end_date BETWEEN ? AND ? AND id=?');
+        $stmt->bind_param("sss",$startDate,$endDate, $id);
+        $stmt->execute();
+        $stmt->bind_result($dates);
+        $stmt->close();
+
+        if ($vehicle->getStatus() == 'rented'){$this->errorMessage = "Vehicle is not available";return false;}
+        if ($dates !== null){$this->errorMessage = "Vehicle is reserved";return false; }
+        else {return true;}
+
+    }
+
 
 /*-----------------------------------------------------------------------*/
     /**

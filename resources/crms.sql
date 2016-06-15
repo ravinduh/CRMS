@@ -16,7 +16,7 @@ CREATE  TABLE IF NOT EXISTS `crms`.`vehicle` (
   `fuel` VARCHAR(15) NOT NULL ,
   `transmission` VARCHAR(10) NOT NULL ,
   `description` VARCHAR(600) NULL ,
-  `status` TINYINT(1) NOT NULL ,
+  `status` ENUM('reserved','rented','available') NOT NULL ,
   `image` BLOB NULL ,
   PRIMARY KEY (`id`) )
 ENGINE = InnoDB;

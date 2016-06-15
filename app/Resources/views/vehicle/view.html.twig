@@ -46,9 +46,10 @@ Vehicle
   </tr>
 
     <tr>
-    <td><b>State:</td>
-    <td>{%if vehicle.status==1 %} Available {% endif %}
-        {%if vehicle.status==0 %} Unavailable {% endif %}
+    <td><b>State: </td>
+    <td>{%if vehicle.status=='available' %} Available {% endif %}
+        {%if vehicle.status=='rented' %} Unavailable {% endif %}
+        {%if vehicle.status=='reserved' %} Reserved {% endif %}
 
     </td>
   </tr>

@@ -23,34 +23,34 @@ class __TwigTemplate_ebc31a55ef2d8ffb2529cea95427497d4d1f334bdf2d33149955c0f312f
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_dd91876b1ebd86c6f1dfef84864fe39d705a6ba86496fd226cd211bfc374a3d2 = $this->env->getExtension("native_profiler");
-        $__internal_dd91876b1ebd86c6f1dfef84864fe39d705a6ba86496fd226cd211bfc374a3d2->enter($__internal_dd91876b1ebd86c6f1dfef84864fe39d705a6ba86496fd226cd211bfc374a3d2_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "vehicle/viewall.html.twig"));
+        $__internal_a76019576a7e56152a65e61b0544886c30d094c6b7785f5de134669ae49c0cf5 = $this->env->getExtension("native_profiler");
+        $__internal_a76019576a7e56152a65e61b0544886c30d094c6b7785f5de134669ae49c0cf5->enter($__internal_a76019576a7e56152a65e61b0544886c30d094c6b7785f5de134669ae49c0cf5_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "vehicle/viewall.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_dd91876b1ebd86c6f1dfef84864fe39d705a6ba86496fd226cd211bfc374a3d2->leave($__internal_dd91876b1ebd86c6f1dfef84864fe39d705a6ba86496fd226cd211bfc374a3d2_prof);
+        $__internal_a76019576a7e56152a65e61b0544886c30d094c6b7785f5de134669ae49c0cf5->leave($__internal_a76019576a7e56152a65e61b0544886c30d094c6b7785f5de134669ae49c0cf5_prof);
 
     }
 
     // line 4
     public function block_title($context, array $blocks = array())
     {
-        $__internal_1f0898101496a7b46379473ad3f6417457e9f4aea2ec8cbfc358ab23ef0abc24 = $this->env->getExtension("native_profiler");
-        $__internal_1f0898101496a7b46379473ad3f6417457e9f4aea2ec8cbfc358ab23ef0abc24->enter($__internal_1f0898101496a7b46379473ad3f6417457e9f4aea2ec8cbfc358ab23ef0abc24_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
+        $__internal_61558d51ed19e89d15255f335de64b99d317afdb011f5c766050f495063a88df = $this->env->getExtension("native_profiler");
+        $__internal_61558d51ed19e89d15255f335de64b99d317afdb011f5c766050f495063a88df->enter($__internal_61558d51ed19e89d15255f335de64b99d317afdb011f5c766050f495063a88df_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
 
         // line 5
         echo "All Vehicles
 ";
         
-        $__internal_1f0898101496a7b46379473ad3f6417457e9f4aea2ec8cbfc358ab23ef0abc24->leave($__internal_1f0898101496a7b46379473ad3f6417457e9f4aea2ec8cbfc358ab23ef0abc24_prof);
+        $__internal_61558d51ed19e89d15255f335de64b99d317afdb011f5c766050f495063a88df->leave($__internal_61558d51ed19e89d15255f335de64b99d317afdb011f5c766050f495063a88df_prof);
 
     }
 
     // line 8
     public function block_links($context, array $blocks = array())
     {
-        $__internal_e61ce9b59a6fd13a65227862e45d2b7c8165bd87dce8b8fc66d446b4c0198fb5 = $this->env->getExtension("native_profiler");
-        $__internal_e61ce9b59a6fd13a65227862e45d2b7c8165bd87dce8b8fc66d446b4c0198fb5->enter($__internal_e61ce9b59a6fd13a65227862e45d2b7c8165bd87dce8b8fc66d446b4c0198fb5_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "links"));
+        $__internal_03391f2252e09881cf76e31aa33cffd4c4797c70fbb4a3fcac2b1c2a5401d560 = $this->env->getExtension("native_profiler");
+        $__internal_03391f2252e09881cf76e31aa33cffd4c4797c70fbb4a3fcac2b1c2a5401d560->enter($__internal_03391f2252e09881cf76e31aa33cffd4c4797c70fbb4a3fcac2b1c2a5401d560_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "links"));
 
         // line 9
         echo "    <div class=\"btn-group\" >
@@ -61,15 +61,15 @@ class __TwigTemplate_ebc31a55ef2d8ffb2529cea95427497d4d1f334bdf2d33149955c0f312f
     </div>
 ";
         
-        $__internal_e61ce9b59a6fd13a65227862e45d2b7c8165bd87dce8b8fc66d446b4c0198fb5->leave($__internal_e61ce9b59a6fd13a65227862e45d2b7c8165bd87dce8b8fc66d446b4c0198fb5_prof);
+        $__internal_03391f2252e09881cf76e31aa33cffd4c4797c70fbb4a3fcac2b1c2a5401d560->leave($__internal_03391f2252e09881cf76e31aa33cffd4c4797c70fbb4a3fcac2b1c2a5401d560_prof);
 
     }
 
     // line 15
     public function block_body($context, array $blocks = array())
     {
-        $__internal_cef159892e70572a8d2e75615228ee86e311728490f8dc05199f6065156f692b = $this->env->getExtension("native_profiler");
-        $__internal_cef159892e70572a8d2e75615228ee86e311728490f8dc05199f6065156f692b->enter($__internal_cef159892e70572a8d2e75615228ee86e311728490f8dc05199f6065156f692b_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_0b4d3c8d4e01f10ae97c7b8479f3329300afe59a552529b14aaa6714804d8d1f = $this->env->getExtension("native_profiler");
+        $__internal_0b4d3c8d4e01f10ae97c7b8479f3329300afe59a552529b14aaa6714804d8d1f->enter($__internal_0b4d3c8d4e01f10ae97c7b8479f3329300afe59a552529b14aaa6714804d8d1f_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 16
         echo "<table class=\"table table-striped table-responsive\" width=\"100%\">
@@ -139,15 +139,52 @@ class __TwigTemplate_ebc31a55ef2d8ffb2529cea95427497d4d1f334bdf2d33149955c0f312f
 
        \t<td>";
             // line 53
-            if (($this->getAttribute($context["vehi"], "status", array()) == 1)) {
+            if (($this->getAttribute($context["vehi"], "status", array()) == "available")) {
                 echo " Available ";
             }
             // line 54
             echo "            ";
-            if (($this->getAttribute($context["vehi"], "status", array()) == 0)) {
-                echo " Unavailable ";
+            if (($this->getAttribute($context["vehi"], "status", array()) == "rented")) {
+                echo " Rented ";
             }
             // line 55
+            echo "            ";
+            if (($this->getAttribute($context["vehi"], "status", array()) == "reserved")) {
+                echo " Reserved ";
+            }
+            // line 56
+            echo "
+        ";
+            // line 57
+            if (($this->getAttribute($context["vehi"], "status", array()) == "available")) {
+                // line 58
+                echo "
+            <div class=\"btn-group\" >
+
+                <a href=\"";
+                // line 61
+                echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getUrl("vehicle_dispatch", array("id" => $this->getAttribute($context["vehi"], "id", array()), "status" => "rented")), "html", null, true);
+                echo "\"><button type=\"button\" class=\"btn btn-xs btn-success\">Dispatch</button></a>
+            </div>
+        ";
+            }
+            // line 64
+            echo "
+            ";
+            // line 65
+            if (($this->getAttribute($context["vehi"], "status", array()) == "rented")) {
+                // line 66
+                echo "
+                <div class=\"btn-group\" >
+
+                    <a href=\"";
+                // line 69
+                echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getUrl("vehicle_dispatch", array("id" => $this->getAttribute($context["vehi"], "id", array()), "status" => "available")), "html", null, true);
+                echo "\"><button type=\"button\" class=\"btn btn-xs btn-success\">Finish</button></a>
+                </div>
+            ";
+            }
+            // line 72
             echo "
         </td>
         </tr>
@@ -156,12 +193,12 @@ class __TwigTemplate_ebc31a55ef2d8ffb2529cea95427497d4d1f334bdf2d33149955c0f312f
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['vehi'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 59
+        // line 76
         echo "</ul>
 
 ";
         
-        $__internal_cef159892e70572a8d2e75615228ee86e311728490f8dc05199f6065156f692b->leave($__internal_cef159892e70572a8d2e75615228ee86e311728490f8dc05199f6065156f692b_prof);
+        $__internal_0b4d3c8d4e01f10ae97c7b8479f3329300afe59a552529b14aaa6714804d8d1f->leave($__internal_0b4d3c8d4e01f10ae97c7b8479f3329300afe59a552529b14aaa6714804d8d1f_prof);
 
     }
 
@@ -177,7 +214,7 @@ class __TwigTemplate_ebc31a55ef2d8ffb2529cea95427497d4d1f334bdf2d33149955c0f312f
 
     public function getDebugInfo()
     {
-        return array (  160 => 59,  151 => 55,  146 => 54,  142 => 53,  135 => 49,  129 => 46,  123 => 43,  116 => 39,  110 => 36,  104 => 33,  98 => 32,  94 => 30,  90 => 29,  75 => 16,  69 => 15,  59 => 10,  56 => 9,  50 => 8,  42 => 5,  36 => 4,  11 => 2,);
+        return array (  197 => 76,  188 => 72,  182 => 69,  177 => 66,  175 => 65,  172 => 64,  166 => 61,  161 => 58,  159 => 57,  156 => 56,  151 => 55,  146 => 54,  142 => 53,  135 => 49,  129 => 46,  123 => 43,  116 => 39,  110 => 36,  104 => 33,  98 => 32,  94 => 30,  90 => 29,  75 => 16,  69 => 15,  59 => 10,  56 => 9,  50 => 8,  42 => 5,  36 => 4,  11 => 2,);
     }
 }
 /* {# app/Resources/views/default/new.html.twig #}*/
@@ -232,8 +269,25 @@ class __TwigTemplate_ebc31a55ef2d8ffb2529cea95427497d4d1f334bdf2d33149955c0f312f
 /*         </td>*/
 /* */
 /* */
-/*        	<td>{%if vehi.status==1 %} Available {% endif %}*/
-/*             {%if vehi.status==0 %} Unavailable {% endif %}*/
+/*        	<td>{%if vehi.status=='available' %} Available {% endif %}*/
+/*             {%if vehi.status=='rented' %} Rented {% endif %}*/
+/*             {%if vehi.status=='reserved' %} Reserved {% endif %}*/
+/* */
+/*         {% if vehi.status=='available' %}*/
+/* */
+/*             <div class="btn-group" >*/
+/* */
+/*                 <a href="{{ url('vehicle_dispatch', {'id': vehi.id ,'status':'rented'}) }}"><button type="button" class="btn btn-xs btn-success">Dispatch</button></a>*/
+/*             </div>*/
+/*         {% endif %}*/
+/* */
+/*             {% if vehi.status=='rented' %}*/
+/* */
+/*                 <div class="btn-group" >*/
+/* */
+/*                     <a href="{{ url('vehicle_dispatch', {'id': vehi.id ,'status':'available'}) }}"><button type="button" class="btn btn-xs btn-success">Finish</button></a>*/
+/*                 </div>*/
+/*             {% endif %}*/
 /* */
 /*         </td>*/
 /*         </tr>*/

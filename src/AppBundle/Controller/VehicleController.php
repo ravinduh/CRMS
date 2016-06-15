@@ -9,6 +9,7 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+
 use Symfony\Component\Form\FormError;
 
 class VehicleController extends Controller
@@ -39,7 +40,7 @@ class VehicleController extends Controller
             ->add('fuel', ChoiceType::class,array('choices'=>array('Diesel'=>'Diesel','Petrol'=>'petrol','Hybrid'=>'Hybrid')))
             ->add('transmission', ChoiceType::class, array('choices'=>array('Auto'=>'Auto','Manual'=>'Manual')))
             ->add('description', TextType::class)
-            ->add('status', ChoiceType::class,array('choices'=>array('Available'=>TRUE,'Unavailable'=>FALSE)))
+            ->add('status', ChoiceType::class,array('choices'=>array('Reserved'=>'reserved','Rented'=>'rented','Available'=>'available')))
 
             ->add('save', SubmitType::class, array('label' => 'Create vehicle'))
             ->getForm();
@@ -79,4 +80,20 @@ class VehicleController extends Controller
         return $this->render('vehicle/view.html.twig', array('vehicle' =>$vehicle));  
 
     }
+
+    /**
+     * @Route("/vehicle/changeStatus/{id}/{status}", name="vehicle_dispatch")
+     */
+
+  public function changeStatusAction($id, $status , Request $request)
+  {
+
+
+    $vehicle = New Vehicle();
+    $vehicle->changeStatus($status, $id);
+
+      return $this->redirectToRoute('vehicle_viewAll');
+
+
+  }
 }

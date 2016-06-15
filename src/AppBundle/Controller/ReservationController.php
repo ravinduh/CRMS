@@ -36,7 +36,6 @@ class ReservationController extends Controller
     {
 
         $reservation = new CustomerReserveVehicle(); 
-
         $customers = Customer::getAll(); // getting all the customers
         $vehicles = Vehicle::getAll();  // getting all the vehicles
 
@@ -78,13 +77,22 @@ class ReservationController extends Controller
         if ($form->isSubmitted()) {
             // ... perform some action, such as saving the task to the database
 
-            $reservation->save();
+
+            // changes vehicle status to reserved
+            $vehicle= new Vehicle();
+           if ( $vehicle->isAvailable($form["vehicleId"]->getData(),$form["startDate"]->getData(),$form["endDate"]->getData())){
+
+               $vehicle->changeStatus('reserved',$form["vehicleId"]->getData());
+               $reservation->save();
+           }
+
 
             return $this->redirectToRoute('reservation_viewAll');
         }
 
         // replace this example code with whatever you need
-        return $this->render('reservation/create.html.twig', array('form' => $form->createView()));
+
+        return $this->render('reservation/create.html.twig', array('form' => $form->createView(),'form_error'=>$vehicle->getError()));
     }
 
     /**

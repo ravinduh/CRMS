@@ -50,8 +50,25 @@ All Vehicles
         </td>
 
 
-       	<td>{%if vehi.status==1 %} Available {% endif %}
-            {%if vehi.status==0 %} Unavailable {% endif %}
+       	<td>{%if vehi.status=='available' %} Available {% endif %}
+            {%if vehi.status=='rented' %} Rented {% endif %}
+            {%if vehi.status=='reserved' %} Reserved {% endif %}
+
+        {% if vehi.status=='available' %}
+
+            <div class="btn-group" >
+
+                <a href="{{ url('vehicle_dispatch', {'id': vehi.id ,'status':'rented'}) }}"><button type="button" class="btn btn-xs btn-success">Dispatch</button></a>
+            </div>
+        {% endif %}
+
+            {% if vehi.status=='rented' %}
+
+                <div class="btn-group" >
+
+                    <a href="{{ url('vehicle_dispatch', {'id': vehi.id ,'status':'available'}) }}"><button type="button" class="btn btn-xs btn-success">Finish</button></a>
+                </div>
+            {% endif %}
 
         </td>
         </tr>

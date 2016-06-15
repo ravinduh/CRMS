@@ -15,9 +15,9 @@ security:
 
         main:
             anonymous: ~
-            form_login:
-              login_path: login
-              check_login: login
+           # form_login:
+            #  login_path: login
+             # check_login: login
             # activate different ways to authenticate
 
             http_basic: ~
